@@ -1,0 +1,15 @@
+{
+  "name": "cmlandshark",
+  "version": "1.0",
+  "dependencies": [
+    {
+      "name": "imgui",
+      "features": ["glfw-binding", "opengl3-binding", "opengl2-binding"]
+    },
+    "glfw3",
+    "glad",
+    "nativefiledialog",
+    "stb",
+    "glew"
+  ]
+}
