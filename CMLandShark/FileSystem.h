@@ -4,7 +4,7 @@
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING //allows the use of filesystem to get directory path
 #include <experimental/filesystem> 
 namespace fs = std::experimental::filesystem;
-#include "stb_image.h"  // load images
+#include <SOIL/SOIL.h>
 struct Image {
   std::string imagePath;
   float hSize = 256.0;  // height of the button (height of the image)

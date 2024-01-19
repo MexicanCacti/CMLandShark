@@ -29,5 +29,5 @@ target_link_libraries(CMLandShark PRIVATE imgui::imgui)
 find_package(unofficial-nativefiledialog CONFIG REQUIRED)
 target_link_libraries(CMLandShark PRIVATE unofficial::nativefiledialog::nfd)
 
-find_package(Stb REQUIRED)
-target_include_directories(CMLandShark PRIVATE ${Stb_INCLUDE_DIR})
+find_package(soil CONFIG REQUIRED)
+target_link_libraries(CMLandShark PRIVATE soil)

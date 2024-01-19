@@ -9,7 +9,7 @@
     "glfw3",
     "glad",
     "nativefiledialog",
-    "stb",
-    "glew"
+    "glew",
+    "soil"
   ]
 }

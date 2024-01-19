@@ -1,7 +1,4 @@
 #include "FileSystem.h"
-#define STBI_MSC_SECURE_CRT
-#define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h" // to create a default .png if there is no valid image file
 void getFolders(std::vector<Media>& Medias, std::string Directory) {
   std::vector<std::string>folderNames;  // list of all the folders
   Media media;
@@ -99,7 +96,7 @@ std::string createDefaultImage(std::string Path) {
   }
   
   // write image to a file
-  stbi_write_png(filename, width, height, 3, pixels, width * 3);
+  //stbi_write_png(filename, width, height, 3, pixels, width * 3);
   // release memory
   delete[] pixels;
   

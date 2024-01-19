@@ -3,12 +3,12 @@
 // - Getting Started      https://dearimgui.com/getting-started
 // - Documentation        https://dearimgui.com/docs (same as your local docs/ folder).
 // - Introduction, links and more at the top of imgui.cpp
-#define STB_IMAGE_IMPLEMENTATION
-//#include <GL/glew.h>    // inclde glew
 #include <imgui.h>
+#include <GL/glew.h>
 #include <imgui_impl_glfw.h>
+#define IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 #include <imgui_impl_opengl3.h>
-#include <imgui_impl_opengl3_loader.h>
+//#include <imgui_impl_opengl3_loader.h>
 #include <stdio.h>
 #define GL_SILENCE_DEPRECATION
 #if defined(IMGUI_IMPL_OPENGL_ES2)
@@ -18,7 +18,6 @@
 #include "Explorer.h" // media explorer (saves directory & file with in)
 #include <fstream> // read/write files
 #include <nfd.h> // file explorer
-#include <iostream> // DELTE ME
 // [Win32] Example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
 // To link with VS2010-era libraries, VS2015+ requires linking with legacy_stdio_definitions.lib, which we do using this pragma.
 // Your own project should not be affected, as you are likely to link with a newer binary of GLFW that is adequate for your version of Visual Studio.
@@ -72,14 +71,7 @@ int main(int, char**)
         return 1;
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
-
-    /*
-    // Initialize GLEW after creating the OpenGL context
-    if (glewInit() != GLEW_OK) {
-      fprintf(stderr, "Failed to initialize GLEW\n");
-      return -1;
-    }  
-    */
+    
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -267,7 +259,6 @@ void displayMovies(Explorer Explore, std::string DirectoryPath) {
   ImVec2 windowSize = ImGui::GetWindowSize();
   float currentLineWidth = 0.0f;
   for (int i = 0; i < Explore.getAmount(); i++) {
-    // make it so it is an image button
     // get the path to the image
     std::string imagePath = DirectoryPath + "\\" + Explore.getMedia(i).mediaName + "\\" + Explore.getImage(i).imagePath;
     Explore.getImage(i).setImageSize(maxButtonHeight, maxButtonWidth);
@@ -275,17 +266,29 @@ void displayMovies(Explorer Explore, std::string DirectoryPath) {
     const char* imageName = imagePath.c_str();
     int width = static_cast<int>(std::ceilf(Explore.getImage(i).wSize));
     int height = static_cast<int>(std::ceilf(Explore.getImage(i).hSize));
-    int channels = 3; // 3 for rgb 
     // create button with image (Vec2 determines height & width)
-    unsigned char* image = stbi_load(imageName, &width, &height, &channels, 3);
+    unsigned char* image = SOIL_load_image(imageName, &width, &height, NULL, 3);
+    
     //CHANGE THIS EVENTUALLY
-    GLuint Texture;
-    glGenTextures(1, &Texture);
-    glBindTexture(GL_TEXTURE_2D, Texture);
+    GLuint texture0;
+    glGenTextures(1, &texture0);
+    glBindTexture(GL_TEXTURE_2D, texture0);
+    
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    if (!image) {
+    
+    }
+    else {
+      glTexImage2D(GL_TEXTURE_2D,0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+      glGenerateMipmap(GL_TEXTURE_2D);
+    }
     
     // create texture ID from loaded image... maybe put a check to see if successfully loaded?
     // load the images at the beginning of the program? Maybe in Explorer FindMedia?
-    if (ImGui::ImageButton((ImTextureID)image, ImVec2(Explore.getImage(i).wSize, Explore.getImage(i).hSize))) {
+    if (ImGui::ImageButton((image), ImVec2(Explore.getImage(i).wSize, Explore.getImage(i).hSize))) {
       // if click open media player using mediapath
       std::string moviePath = DirectoryPath + "\\" + Explore.getMedia(i).mediaName + "\\" + Explore.getMedia(i).mediaPath;
       //playMovie(moviePath);
@@ -298,6 +301,9 @@ void displayMovies(Explorer Explore, std::string DirectoryPath) {
     else {
       ImGui::SameLine();
     }
+    glActiveTexture(0);
+    glBindTexture(GL_TEXTURE_2D,0);
+    SOIL_free_image_data(image);
   }
   ImGui::NewLine();
   ImGui::NewLine();
