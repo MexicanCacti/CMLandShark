@@ -3,6 +3,7 @@
 #define STARTIMGUI_H
 
 #include "FileSystem.h"
+#include "nfd.h"  // file explorer
 #include "imgui.h"
 #include "gl/glew.h"
 #include "imgui_impl_glfw.h"
@@ -13,10 +14,12 @@
 #include <GLES2/gl2.h>
 #endif
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
+#include <fstream>
 
 class startImGui {
 private:
   ImGuiIO io;
+  Explorer Explorer;
   // Our state... add a new bool for a new window... update in Update()
   bool runProgram = true; // If true runs the main window where can select movie
   bool showFileWindow = true; // If true shows select directory window
@@ -31,4 +34,10 @@ public:
   void Render(GLFWwindow* window);
   void ShutDown(GLFWwindow* window);
 };
+
+// Helper Functions
+
+void displayMovies(Explorer& Explorer);  // Displays the list of movies & provides accompanying buttons
+
+
 #endif
