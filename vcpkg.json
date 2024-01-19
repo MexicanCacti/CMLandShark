@@ -1,13 +1,12 @@
 {
-  "name": "cmlandshark",
-  "version": "1.0",
+  "name": "cmlandsharkv2",
+  "version": "2.0",
   "dependencies": [
     {
       "name": "imgui",
-      "features": ["glfw-binding", "opengl3-binding", "opengl2-binding"]
+      "features": [ "glfw-binding", "opengl3-binding", "opengl2-binding" ]
     },
     "glfw3",
-    "glad",
     "nativefiledialog",
     "glew",
     "soil"

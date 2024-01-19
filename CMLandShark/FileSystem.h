@@ -1,27 +1,50 @@
 #pragma once
+#ifndef FILESYSTEM_H
+#define FILESYSTEM_H
+
 #include <string>
 #include <vector>
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING //allows the use of filesystem to get directory path
 #include <experimental/filesystem> 
 namespace fs = std::experimental::filesystem;
-#include <SOIL/SOIL.h>
+
 struct Image {
-  std::string imagePath;
-  float hSize = 256.0;  // height of the button (height of the image)
-  float wSize = 256.0;  // width of the button (width of the image)
-  void inline setImageSize(const float height, const float width) {hSize = height, wSize = width; }
+  std::string imagePath;  // Path to image... EX: C:\Directory\mediaFolder\Image.png
+  float hSize;            // Height of image
+  float wSize;            // Width of image
+  void inline setImageSize(const float height, const float width) { hSize = height, wSize = width; }
 };
 
-// can add other attributes here eventually... like maybe a std::string for description that takes a textfile?
 struct Media {
-  std::string mediaName;
-  std::string mediaPath;
+  std::string mediaName;  // Name of mediaFolder containing files
+  std::string mediaPath;  // Path to media... EX: C:\Directory\mediaFolder\movie.mp4
   Image image;
 };
 
+class Explorer {
+private:
+  std::string DirectoryPath;  // Path to directory containg all media EX: C:\Directory
+  std::vector<Media>Medias;   // Every folder creates a media object which is stored in a list
+  // Media Dummy;
+public:
+  // Helper Functions to search through directory
+  friend void getFolders(Explorer& Explorer);
+  friend Media getFiles(std::string folderName, Explorer& Explorer);
 
-void getFolders(std::vector<Media>& Medias, std::string Directory);
+  inline void setDirectoryPath(std::string dPath) { DirectoryPath = dPath; clearMedia(); findMedia(); } // Sets path to directory & Clears existing list of Media objects & Creates new list
+  inline std::string const getDirectoryPath() { return DirectoryPath; }  // Gets path to directory
+  inline void findMedia() { getFolders(*this); }  // Searches through list of folders in directory to create list of Media objects
+  inline bool isMissing() { return DirectoryPath.empty(); }  // Checks if there is a stored directory path. True = Not Stored || False = Stored
+  inline void clearMedia() { Medias.clear(); } // Clears list of stored Media objects.
 
-Media getFiles(std::string Folder, std::string Directory);
+  std::string const getMedia(const std::string MediaName);  // Gets path to MediaName by name
+  std::string const getMedia(const int index);  // Gets path to MediaName by index
+  std::string getImage(const std::string MediaName);  // Gets path to MediaName's image by name
+  std::string getImage(const int index);  // Gets path to MediaName's image by index
+  inline std::vector<Media> const getMedias() { return Medias; } // Gets list of Media objects
+};
 
-std::string createDefaultImage(std::string Path);
+// Create default image
+
+
+#endif

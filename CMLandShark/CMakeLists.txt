@@ -7,15 +7,11 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/InitialDirectory.txt
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Add source to this project's executable.
-add_executable (CMLandShark "CMLandShark.cpp" "Explorer.h" "Explorer.cpp" "FileSystem.h" "FileSystem.cpp")
+add_executable (CMLandShark "CMLandShark.cpp" "startImGui.h" "startImGui.cpp" "FileSystem.h" "FileSystem.cpp" "CMLandShark.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMLandShark PROPERTY CXX_STANDARD 20)
 endif()
-
-# TODO: Add tests and install targets if needed.
-find_package(glad CONFIG REQUIRED)
-target_link_libraries(CMLandShark PRIVATE glad::glad)
 
 find_package(GLEW REQUIRED)
 target_link_libraries(CMLandShark PRIVATE GLEW::GLEW)
