@@ -25,7 +25,7 @@ Media getFiles(std::string folderName, Explorer& Explorer) {
   const char* const file_ext_mkv = ".mkv";
   const char* const file_ext_akv = ".avi";
 
-  // VALID IMAGE PATH
+  // VALID IMAGE FILES
   const char* const file_ext_png = ".png";
   const char* const file_ext_jpg = ".jpg";
 
