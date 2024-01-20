@@ -15,7 +15,7 @@
 #endif
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 #include <fstream>
-
+#include <Windows.h>  // video playback eventually want to implement a non-windows only method. SFML VLC QT maybe?
 class startImGui {
 private:
   ImGuiIO io;
@@ -25,7 +25,6 @@ private:
   bool showFileWindow = true; // If true shows select directory window
   bool firstTime = true;  // If true will automatically display showFileWindow...otherwise will take stored directory in a text file
   bool changeDirectory = false; // If true then button to change directory was clicked
-
   ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);  // Changes background color
 public:
   void Init(GLFWwindow* window, const char* glsl_version);
@@ -39,5 +38,6 @@ public:
 
 void displayMovies(Explorer& Explorer);  // Displays the list of movies & provides accompanying buttons
 
+void playMovie(const std::string& moviePath);
 
 #endif

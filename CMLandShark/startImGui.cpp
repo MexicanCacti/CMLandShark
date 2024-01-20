@@ -1,5 +1,5 @@
 #include "startImGui.h"
-
+#include "Windows.h"
 // so in init maybe check if have working directory files? if so then load the images?
 void startImGui::Init(GLFWwindow* window, const char* glsl_version) {
   IMGUI_CHECKVERSION();
@@ -139,7 +139,7 @@ void displayMovies(Explorer& Explorer) {
   for (const auto& movie : Explorer.getMedias()) {
     imagePath = movie.image.imagePath.c_str();
     if (ImGui::Button(movie.mediaName.c_str())) {
-      
+      playMovie(movie.mediaPath);
     }
     currentLineWidth += ImGui::GetItemRectSize().x + ImGui::GetStyle().ItemSpacing.x;
     if (currentLineWidth > maxLineWidth) {
@@ -152,4 +152,13 @@ void displayMovies(Explorer& Explorer) {
   }
   ImGui::NewLine();
   ImGui::NewLine();
+}
+
+void playMovie(const std::string& moviePath) {
+  HINSTANCE result = ShellExecute(NULL, "open", moviePath.c_str(), NULL, NULL, SW_SHOWNORMAL);
+
+  if ((intptr_t)result <= 32) {
+    MessageBox(NULL, "Error opening movie file", "Error", MB_OK | MB_ICONERROR);
+    return;
+  }
 }
