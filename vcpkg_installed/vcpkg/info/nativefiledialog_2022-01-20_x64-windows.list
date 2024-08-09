@@ -1,0 +1,17 @@
+x64-windows/
+x64-windows/debug/
+x64-windows/debug/lib/
+x64-windows/debug/lib/nfd_d.lib
+x64-windows/include/
+x64-windows/include/nfd.h
+x64-windows/lib/
+x64-windows/lib/nfd.lib
+x64-windows/share/
+x64-windows/share/nativefiledialog/
+x64-windows/share/nativefiledialog/copyright
+x64-windows/share/nativefiledialog/vcpkg.spdx.json
+x64-windows/share/nativefiledialog/vcpkg_abi_info.txt
+x64-windows/share/unofficial-nativefiledialog/
+x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config-debug.cmake
+x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config-release.cmake
+x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config.cmake

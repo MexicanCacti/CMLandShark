@@ -1,0 +1,28 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindGLEW.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake
+E:/VSProjects/CMLandShark/CMLandShark/CMakeLists.txt
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glew/CopyImportedTargetProperties.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glew/glew-config.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glew/glew-targets-debug.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glew/glew-targets-release.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glew/glew-targets.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glfw3/glfw3Config.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glfw3/glfw3Targets-release.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/glfw3/glfw3Targets.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/imgui/imgui-config.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/imgui/imgui-targets-debug.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/imgui/imgui-targets-release.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/imgui/imgui-targets.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/soil/soilConfig.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/soil/soilConfigVersion.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/soil/soilTargets-release.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/soil/soilTargets.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config-debug.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config-release.cmake
+E:/VSProjects/CMLandShark/vcpkg_installed/x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config.cmake

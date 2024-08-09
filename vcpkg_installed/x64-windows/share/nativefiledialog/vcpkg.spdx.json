@@ -1,0 +1,132 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/nativefiledialog-x64-windows-2022-01-20-98a8d709-d255-4850-9aa9-71e90356f025",
+  "name": "nativefiledialog:x64-windows@2022-01-20 132e5b0faa784c76856fb501c5873cfec0eae77d84243ddf606d8d448acaa79d",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-710a3116bbd615864eef5f9010af178034cb9b44"
+    ],
+    "created": "2024-06-27T12:46:37Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "nativefiledialog",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "2022-01-20",
+      "downloadLocation": "NOASSERTION",
+      "homepage": "https://github.com/mlabbe/nativefiledialog",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "A tiny, neat C library that portably invokes native file open and save dialogs",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "nativefiledialog:x64-windows",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "132e5b0faa784c76856fb501c5873cfec0eae77d84243ddf606d8d448acaa79d",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "mlabbe/nativefiledialog",
+      "downloadLocation": "git+https://github.com/mlabbe/nativefiledialog@67345b80ebb429ecc2aeda94c478b3bcc5f7888e",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "55edb3730b718b18d4fee7ec9bb479794d0e193ff13f05f26cbcf9ff44c43adb93e228ed7fd708e30c08476366f098bf69139031a84f5e4d6a85eba096fe4654"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": "./C:/dev/vcpkg/ports/nativefiledialog/CMakeLists.txt",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "252ef5076757490a4161a8cf1d7a39b2bc7d7dcfce95e56408564226ec1beccc"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/dev/vcpkg/ports/nativefiledialog/portfile.cmake",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "074b38435c6aac83f6bec42c44d1fecd1fe202e98268cfa1b27997a8c8f77a09"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./C:/dev/vcpkg/ports/nativefiledialog/vcpkg.json",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "955d027610467bf70b97d002d551d09cac9232cfbedccecc68cef2683e3d233c"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

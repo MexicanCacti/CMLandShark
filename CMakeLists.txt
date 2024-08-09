@@ -2,6 +2,10 @@
 # and include sub-projects here.
 #
 cmake_minimum_required (VERSION 3.8)
+project(CMLandShark)
+
+# Specify the path to the vcpkg toolchain file
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg_installed/scripts/buildsystems/vcpkg.cmake")
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -9,7 +13,5 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("CMLandShark")
-
 # Include sub-projects.
-add_subdirectory ("CMLandShark")
+add_subdirectory (CMLandShark)

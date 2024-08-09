@@ -1,0 +1,113 @@
+Package: vcpkg-cmake-config
+Version: 2022-02-06
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2b6318b8217b69e276921e0bd9ee3874ce9798ebeb955e5996d4bf8f273220ef
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2023-05-04
+Architecture: x64-windows
+Multi-Arch: same
+Abi: cfb574f798ca59da8bf8ca28788b83b10a1ece362052e28136e81c3244bd59e7
+Status: install ok installed
+
+Package: egl-registry
+Version: 2022-09-20
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3c2fc32208fb344a3a36426056a65004f8853083b90a97413a4a807dc3ebef04
+Description: the EGL API and Extension Registry
+Status: install ok installed
+
+Package: opengl-registry
+Version: 2022-09-29
+Port-Version: 1
+Depends: egl-registry
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e4f473629f6be76bb0772298e1a558787a8f337f091192c67f6de2266676e318
+Description: the API and Extension registries for the OpenGL family APIs
+Status: install ok installed
+
+Package: opengl
+Version: 2022-12-04
+Port-Version: 3
+Depends: opengl-registry
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 17210bc66ab074d1adcebd2c3a8afabdac498fea8f9a47ae4f842a598428c2e7
+Description: Open Graphics Library (OpenGL)[3][4][5] is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics.
+Status: install ok installed
+
+Package: glew
+Version: 2.2.0
+Port-Version: 3
+Depends: opengl, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 508196c642fd63799ecdd0c49cf6b8584efb7ccbf132f6edcec15bfe6a9fe2b3
+Description: The OpenGL Extension Wrangler Library (GLEW) is a cross-platform open-source C/C++ extension loading library.
+Status: install ok installed
+
+Package: glfw3
+Version: 3.3.9
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: fcc2388066c3e1ab893d4826cbcb1cf0923d6f15bc937151ae72026cdc104997
+Description: GLFW is a free, Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan application development. It provides a simple, platform-independent API for creating windows, contexts and surfaces, reading input, handling events, etc.
+Status: install ok installed
+
+Package: imgui
+Version: 1.90
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9899272f27462e13e4b82d3dfd12acafe3e6ca446c111db87b307d41d4bf7b70
+Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
+Status: install ok installed
+
+Package: imgui
+Feature: glfw-binding
+Depends: glfw3
+Architecture: x64-windows
+Multi-Arch: same
+Description: Make available GLFW binding
+Status: install ok installed
+
+Package: imgui
+Feature: opengl2-binding
+Architecture: x64-windows
+Multi-Arch: same
+Description: Make available OpenGL (legacy) binding
+Status: install ok installed
+
+Package: imgui
+Feature: opengl3-binding
+Architecture: x64-windows
+Multi-Arch: same
+Description: Make available OpenGL3/ES/ES2 (modern) binding
+Status: install ok installed
+
+Package: nativefiledialog
+Version: 2022-01-20
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 132e5b0faa784c76856fb501c5873cfec0eae77d84243ddf606d8d448acaa79d
+Description: A tiny, neat C library that portably invokes native file open and save dialogs
+Status: install ok installed
+
+Package: soil
+Version: 2021-04-22
+Port-Version: 2
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 376b01fa7085949a3a4db753a6f2f3f635db01ea92d9fd91b6a16d2f818234c2
+Description: SOIL is a tiny C library used primarily for uploading textures into OpenGL.
+Status: install ok installed
+

@@ -23,7 +23,7 @@ struct Media {
 
 class Explorer {
 private:
-  std::string DirectoryPath;  // Path to directory containg all media EX: C:\Directory
+  std::string DirectoryPath;  // Path to directory containing all media EX: C:\Directory
   std::vector<Media>Medias;   // Every folder creates a media object which is stored in a list
   // Media Dummy;
 public:
