@@ -1,0 +1,255 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.28.1/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.28.1/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/MSVC-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/MSVC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/3.28.1/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/MSVC-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/MSVC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/Platform/Windows-MSVC.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "CMLandShark/CMakeLists.txt"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/FindGLEW.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glew/glew-config.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glew/glew-targets.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glew/glew-targets-debug.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glew/glew-targets-release.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glew/CopyImportedTargetProperties.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3Config.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3Targets.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3Targets-debug.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3Targets-release.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/imgui/imgui-config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3ConfigVersion.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3Config.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/glfw3/glfw3Targets.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/imgui/imgui-targets.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/imgui/imgui-targets-debug.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/imgui/imgui-targets-release.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config-debug.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/unofficial-nativefiledialog/unofficial-nativefiledialog-config-release.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/soil/soilConfigVersion.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/soil/soilConfig.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/soil/soilTargets.cmake"
+		},
+		{
+			"path" : "vcpkg_installed/x64-windows/share/soil/soilTargets-release.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "E:/VSProjects/CMLandShark/build",
+		"source" : "E:/VSProjects/CMLandShark"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

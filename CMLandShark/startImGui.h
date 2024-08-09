@@ -3,7 +3,7 @@
 #define STARTIMGUI_H
 
 #include "FileSystem.h"
-#include "nfd.h"  // file explorer
+#include "nfd.h"  // file explore
 #include "imgui.h"
 #include "gl/glew.h"
 #include "imgui_impl_glfw.h"

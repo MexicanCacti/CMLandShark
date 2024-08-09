@@ -5,7 +5,8 @@ cmake_minimum_required (VERSION 3.8)
 project(CMLandShark)
 
 # Specify the path to the vcpkg toolchain file
-set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg_installed/scripts/buildsystems/vcpkg.cmake")
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)

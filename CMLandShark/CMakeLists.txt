@@ -17,9 +17,9 @@ endif()
 # Set the CMAKE_PREFIX_PATH to include vcpkg_installed directory
 set(CMAKE_PREFIX_PATH "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows" ${CMAKE_PREFIX_PATH})
 
-# set CMAKE_INCLUDE_PATH and CMAKE_LIBRARY_PATH
-set(CMAKE_INCLUDE_PATH "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/include" ${CMAKE_INCLUDE_PATH})
-set(CMAKE_LIBRARY_PATH "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/lib" ${CMAKE_LIBRARY_PATH})
+# set CMAKE_INCLUDE_PATH and CMAKE_LIBRARY_PATH if needed
+# set(CMAKE_INCLUDE_PATH "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/include" ${CMAKE_INCLUDE_PATH})
+# set(CMAKE_LIBRARY_PATH "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/lib" ${CMAKE_LIBRARY_PATH})
 
 find_package(GLEW REQUIRED)
 target_link_libraries(CMLandShark PRIVATE GLEW::GLEW)
@@ -35,3 +35,16 @@ target_link_libraries(CMLandShark PRIVATE unofficial::nativefiledialog::nfd)
 
 find_package(soil CONFIG REQUIRED)
 target_link_libraries(CMLandShark PRIVATE soil)
+
+# Determine if the build type is Debug or Release
+if (CMAKE_BUILD_TYPE STREQUAL "Debug")
+    set(GLEW_DLL "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/debug/bin/glew32d.dll")
+else()
+    set(GLEW_DLL "${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/bin/glew32.dll")
+endif()
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    "${GLEW_DLL}"
+    $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+
