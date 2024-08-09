@@ -364,3 +364,5 @@ FodyWeavers.xsd
 
 # other folders
 thridParty/
+.vs/
+build/
