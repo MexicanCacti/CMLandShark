@@ -1,13 +1,17 @@
 #pragma once
 #ifndef FILESYSTEM_H
 #define FILESYSTEM_H
-
+#ifdef _WIN32
+  // Window Specific
+  #include <windows.h>
+#else
+  // Linux/Unix
+  #include <dirent.h>
+  #include <sys/stat.h>
+  #include <cstring>
+#endif
 #include <string>
 #include <vector>
-#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING //allows the use of filesystem to get directory path
-#include <experimental/filesystem> 
-namespace fs = std::experimental::filesystem;
-
 struct Image {
   std::string imagePath;  // Path to image... EX: C:\Directory\mediaFolder\Image.png
   float hSize;            // Height of image
@@ -29,10 +33,10 @@ private:
 public:
   // Helper Functions to search through directory
   friend void getFolders(Explorer& Explorer);
-  friend Media getFiles(std::string folderName, Explorer& Explorer);
+  friend Media getFiles(const std::string& folderName, Explorer& Explorer);
 
   inline void setDirectoryPath(std::string dPath) { DirectoryPath = dPath; clearMedia(); findMedia(); } // Sets path to directory & Clears existing list of Media objects & Creates new list
-  inline std::string const getDirectoryPath() { return DirectoryPath; }  // Gets path to directory
+  inline std::string getDirectoryPath() { return DirectoryPath; }  // Gets path to directory
   inline void findMedia() { getFolders(*this); }  // Searches through list of folders in directory to create list of Media objects
   inline bool isMissing() { return DirectoryPath.empty(); }  // Checks if there is a stored directory path. True = Not Stored || False = Stored
   inline void clearMedia() { Medias.clear(); } // Clears list of stored Media objects.
@@ -41,7 +45,7 @@ public:
   std::string const getMedia(const int index);  // Gets path to MediaName by index
   std::string getImage(const std::string MediaName);  // Gets path to MediaName's image by name
   std::string getImage(const int index);  // Gets path to MediaName's image by index
-  inline std::vector<Media> const getMedias() { return Medias; } // Gets list of Media objects
+  inline std::vector<Media> getMedias() { return Medias; } // Gets list of Media objects
 };
 
 // Create default image
