@@ -3,6 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 project(CMLandShark)
+set(CMAKE_CXX_STANDARD 14)
 
 # Specify the path to the vcpkg toolchain file
 set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
@@ -16,3 +17,5 @@ endif()
 
 # Include sub-projects.
 add_subdirectory (CMLandShark)
+
+add_subdirectory("${CMAKE_SOURCE_DIR}/libs/nativefiledialog-extended-master")

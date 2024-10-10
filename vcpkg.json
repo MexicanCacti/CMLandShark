@@ -1,15 +1,12 @@
 {
-  "name": "cmlandsharkv2",
-  "version": "2.0",
-  "dependencies": [
-    {
-      "name": "imgui",
-      "features": [ "glfw-binding", "opengl3-binding", "opengl2-binding" ]
-    },
-    "glfw3",
-    "nativefiledialog",
-    "glew",
-    "soil"
-  ],
-  "builtin-baseline": "f7423ee180c4b7f40d43402c2feb3859161ef625"
+  "name" : "cmlandsharkv2",
+  "version" : "2.0",
+  "dependencies" : [ {
+    "name" : "imgui",
+    "features" : [ "glfw-binding", "opengl3-binding", "opengl2-binding" ]
+  }, "glfw3", "glew", "soil", {
+    "name" : "nativefiledialog-extended",
+    "version>=" : "1.2.0"
+  } ],
+  "builtin-baseline" : "f7423ee180c4b7f40d43402c2feb3859161ef625"
 }
