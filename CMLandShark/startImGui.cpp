@@ -1,5 +1,6 @@
 #include "startImGui.h"
-#include "Windows.h"
+
+#include <iostream>
 // so in init maybe check if have working directory files? if so then load the images?
 void startImGui::Init(GLFWwindow* window, const char* glsl_version) {
   IMGUI_CHECKVERSION();
@@ -15,16 +16,14 @@ void startImGui::Init(GLFWwindow* window, const char* glsl_version) {
   // Setup Dear ImGui style
   ImGui::StyleColorsDark();
   //ImGui::StyleColorsLight(); //if you want light mode
-
-  return;
 }
+
 // NOTE: you DONT have to call this for every new window, just the once
 void startImGui::NewFrame() {
   // Start the Dear ImGui frame
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
-  return;
 }
 
 // so for adding new windows and the such put them in here!
@@ -32,7 +31,6 @@ void startImGui::Update() {
   std::string inputString;
   std::ifstream in;
   std::ofstream out;
-  
   if (runProgram) {
     ImGui::Begin("CMLandShark", &runProgram);
     // If it is the first time opening the program, auto checks InitalDirectory.txt for Directory
@@ -51,23 +49,26 @@ void startImGui::Update() {
         Explorer.findMedia();
       }
     }
-    
     // Window for selecting main movie directory
     if (showFileWindow) {
+      if(NFD_Init() != NFD_OKAY) {
+        std::cout << NFD_GetError() << std::endl;
+      }
       ImGui::Begin("Select Directory", &showFileWindow, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize);
       ImGui::SetWindowPos(ImVec2(100, 100));  // Window position
       ImGui::SetWindowSize(ImVec2(800, 800)); // Window size
       ImGui::Text("Find Main Movie Directory: ");
       if (ImGui::Button("SelectFolder")) {
         out.open("InitialDirectory.txt");
-        nfdchar_t* outPath = nullptr;
-        nfdresult_t result = NFD_PickFolder(nullptr, &outPath);
+        nfdu8char_t * outPath = nullptr;
+        nfdresult_t result = NFD_PickFolderU8(&outPath, nullptr);
         
         if (result == NFD_OKAY) {
           Explorer.setDirectoryPath(outPath);
           Explorer.findMedia();
           out << Explorer.getDirectoryPath();
           showFileWindow = false;
+          NFD_FreePathU8(outPath);
         }
         else if (result == NFD_CANCEL) {             
           ImGui::Text("Canceled Selection");
@@ -80,9 +81,10 @@ void startImGui::Update() {
       if (ImGui::Button("Close")) {
         showFileWindow = false;
       }
-    ImGui::End();
-  };
-    
+      NFD_Quit();
+      ImGui::End();
+    }
+
     ImGui::Text("Current directory: %s", Explorer.getDirectoryPath().c_str());
     displayMovies(Explorer);
     if (ImGui::Button("Change Directory")) {
@@ -90,8 +92,6 @@ void startImGui::Update() {
     }
     ImGui::End();
   }
-
-  return;
 }
 
 void startImGui::Render(GLFWwindow* window) {
@@ -155,10 +155,17 @@ void displayMovies(Explorer& Explorer) {
 }
 
 void playMovie(const std::string& moviePath) {
+#ifdef _WIN32
   HINSTANCE result = ShellExecute(NULL, "open", moviePath.c_str(), NULL, NULL, SW_SHOWNORMAL);
 
-  if ((intptr_t)result <= 32) {
-    MessageBox(NULL, "Error opening movie file", "Error", MB_OK | MB_ICONERROR);
-    return;
+  if((intptr_t)result <= 32) {
+    MessageBox(NULL, ("Error opening movie file with path: " + moviePath + "!").c_str(), "Error", MB_OK | MB_ICONERROR);
   }
+#else
+  std::string command = "xdg-open \"" + moviePath + "\"";
+  int result = std::system(command.c_str());
+  if (result == 0) {
+    std::cerr << "Error opening movie file with path: " << moviePath << "!" << std::endl;
+  }
+#endif
 }
